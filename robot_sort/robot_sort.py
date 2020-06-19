@@ -96,9 +96,35 @@ class SortingRobot:
         """
         Sort the robot's list.
         """
-        # Fill this out
-        pass
-
+        # Robot's name is Fernando
+        # Planned this out with pieces of paper
+        # at the start, we need Fernando's "item" to be the list at index [0]
+        # Fernando then needs to move right and compare the item in its hand to the item at its position, using the "compare_item" method. 
+        # self._item = self._list[self._position] <----- re-read instructions, cannot use this
+        # print(self._item)
+        # Fernando needs to move right for as long as he can while swapping, and then move left for as long as he can
+            # If that method returns "1", then that means whatever is in Fernando's hand is larger, so we just need to continue moving right and doing these comparisons. 
+            # if that method returns "-1", then that means whatever is in Fernando's hand is smaller, so we need to swap those items (using the "swap_items" method), and then continue to the right until we cannot anymore
+            # once Fernando reaches the end of the list (he can no longer move right), we reset his position to "0" and begin the loop again
+        # Had to stop writing code in between the comments. I couldn't read it anymore
+        # self.swap_item()
+        # if self.compare_item() is not None:
+        #     self.sort()
+        while self.can_move_right() is True:
+            # self.move_right()
+            if self.compare_item() == -1 or self.compare_item() is None:
+                self.swap_item()
+                self.move_right()
+            else:
+                self.move_right()
+        while self.can_move_left() is True:
+            if self.compare_item() == 1:
+                self.swap_item()
+                self.move_left()
+            else:
+                self.move_left()
+        if self._item is not None:
+            self.sort()               
 
 if __name__ == "__main__":
     # Test our your implementation from the command line
