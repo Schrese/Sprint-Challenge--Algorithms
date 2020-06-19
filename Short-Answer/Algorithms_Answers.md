@@ -19,5 +19,18 @@ c) O(1)
 ## Exercise II
 
 - My initial thoughts for this exercise were that this would be the perfect time to use a binary search algorithm. This would start at the midpoint and determine whether or not the egg broke and whether it breaks or not, half of the stairs are cut out of being possibilities. Continuing to do this could continue to "rule out" an additional half of the remaining stairs each time. Depending on the amount of stairs.
+- 
+```
+    # store the highest stair
+    # store the lowest stair
+
+    # we need to determine where/when to stop the loop
+    # As long as our lowest stair does not exceed the highest stair, we can keep making comparrisons and setting our values
+        # create/store a midpoint that is the result of the lowest stair and highest stair divided by 2 (rounded down to the nearest whole number, we can't deal with decimals here) 
+        # if the egg doesn't break when it is dropped off of the midpoint, then set the lowest stair to the midpoint and run again
+        # if the egg breaks when it is dropped off of the midpoint, then set the highest stair to the midpoint
+        # once the midpoint has been reached (where the egg is not broken), we just return that midpoint
+```
+
 - Runtime: O(log n)
 
